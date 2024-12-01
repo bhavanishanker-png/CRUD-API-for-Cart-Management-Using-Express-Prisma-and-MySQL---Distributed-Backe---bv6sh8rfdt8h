@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
   const apiKey = req.header("apiauthkey");
 
   if (!apiKey || apiKey !== validApiKey) {
-    return res.status(403).json({ error: "apiauthkey is missing or invalid" });
+    return res.status(403).json({ error: "Failed to authenticate apiauthkey" });
   }
 
   next();
